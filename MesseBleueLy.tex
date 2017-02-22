@@ -2,7 +2,7 @@
 fontsize=12%
 ,a4paper%
 ,DIV=15%
-]{scrbook}
+]{scrartcl}
 %scrartcl
 %scrbook
 
@@ -18,7 +18,10 @@ fontsize=12%
 \begin{document}
 \newcommand{\monespace}{\vspace{1mm}}
 %\renewcommand{\betweenLilyPondSystem}[1]{\vspace{8mm}\linebreak} %espace entre les systèmes 
+\vspace*{\stretch{1}}
 \maketitle\thispagestyle{empty}
+\vspace*{\stretch{1}}
+\newpage
 \newcommand{\betweenLilyPondSystem}[1]{\vspace{5mm}\linebreak} %espace entre les systèmes 
 \includely{ly/Abb-Jean-Robin-1920-2002-Kyrie}
 \monespace
