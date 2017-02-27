@@ -3,7 +3,7 @@
 
 % 
 \header {
-  title = "Gloria"
+ % title = "Gloria"
   % Supprimer le pied de page par défaut
   tagline = ##f
 }
@@ -15,22 +15,29 @@ global = {
 \paper {
  #(include-special-characters)
 }
-guidon = {\teeny \hide Staff.Stem}
-coupe = \bar ""
-guidonoff = \undo \guidon
 
-mezzoSopranoVoice = \relative do'' {
+PretreVoice = \relative do'' {
   \global
   \dynamicUp
-  \cadenzaOn
-\guidon sib8-!^\markup{Intonation} sib8 sol8-!
+\cadenzaOn
+\tiny sib8-! sib8 sol8-!
 fa8
 mib8 fa8-! sol8
 fa4 mib4
 \bar "||"
-\guidonoff
-  \cadenzaOff
-  sib'4.  sib8 do4 (re) mib2 sib4 do sib lab sol2 mib4. fa8 sol4 sib do2 sib \fermata\bar "||"
+}
+versePretreVoice = \lyricmode {\tiny Gló -- ri -- a
+
+in
+
+e -- xcél -- sis
+
+De -- o.}
+
+mezzoSopranoVoice = \relative do'' {
+  \global
+  \dynamicUp
+  sib4.  sib8 do4 (re) mib2 sib4 do sib lab sol2 mib4. fa8 sol4 sib do2 sib \fermata\bar "||"
 s1
 mib8(re do sib) lab4 sib8 sib do2 re2 \fermata\bar "||" \break
 %\cadenzaOn
@@ -76,7 +83,7 @@ s1s8
 %51
  \bar "||"
  \cadenzaOff
- sib4 (lab) sol fa8 mib sib'4. sib8 do4 re mib (re8do) re2 \break sib4 fa8 sol lab4 (sol8fa) sol1 \fermata
+ sib4 (lab) sol fa8 mib sib'4. sib8 do4 re mib (re8do) re2 sib4 fa8 sol lab4 (sol8fa) sol1 \fermata
   s1*3 s8
 \break sib4 sib sol8 lab sib4 (do8) re mib4 sib4 \breathe do4. sib8 lab2 sol8 fa sol lab sib4. (do8 re4 mib8) re do2 re2 \fermata
 s1*2 s4 s8
@@ -95,12 +102,7 @@ mib2 (sib4 do sib2)(sib8)(lab sol fa mib4 sib' do sib lab2.)(sol8 fa) sol1\ferma
 
 verseMezzoSopranoVoice = \lyricmode {
   % Ajouter ici des paroles.
-  \tiny Gló -- ri -- a
-in
-e -- xcél -- sis
-De -- o.
-\normalsize
-Et in ter -- ra pax ho -- mi -- ni -- bus bo -- ne vo -- lun -- ta -- tis.
+  Et in ter -- ra pax ho -- mi -- ni -- bus bo -- ne vo -- lun -- ta -- tis.
   Be -- ne -- di -- ci -- mus te.
   Glo --  _ -- ri -- fi -- ca -- mus te
   Grá -- ti -- as
@@ -145,7 +147,6 @@ tenorVoice = \relative do' {
   \global
   \dynamicUp
   % En avant la musique !
-  R1 R4.
   sib4. sib8 sib2 sib8 lab sib do re4 mib8do re4 re mib2 r4 sib8 sib mib4 fa mib (fa8 mib) re2 \fermata
    mib8 re8[( do8 sib8)] do4  sib4  \bar "||"
    sol8 (sib mib4) mib re8 do8 sib4 la sib2 \fermata
@@ -256,7 +257,6 @@ bassVoice = \relative do {
   \global
   \dynamicUp
   % En avant la musique !
-  R1 R4.
   sib'4. sib8 lab2 sol sol4 sol sol fa mib4. (fa8) sol4. fa8 mib4 re do8 (sib lab4)  sib2 \fermata
   s1
   mib8 (sib do4) fa fa8 mib mib4 (fa) sib,2 \fermata 
@@ -314,6 +314,12 @@ A -- _ men.
 
 }
 
+
+PretreVoicePart = \new Staff \with {
+  instrumentName = "Intonation"
+  midiInstrument = "choir aahs"
+} { \PretreVoice }
+\addlyrics { \versePretreVoice}
 
 mezzoSopranoVoicePart = \new Staff \with {
   instrumentName = "MS"

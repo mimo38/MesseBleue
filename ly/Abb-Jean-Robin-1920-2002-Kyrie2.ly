@@ -17,7 +17,7 @@ global = {
   \time 4/4
 }
 \paper {
- % between-system-space = 10\cm
+  between-system-space = 10\cm
  #(include-special-characters)
 }
 
@@ -26,15 +26,25 @@ mezzoSopranoVoice = \relative do'' {
   \dynamicUp
   % En avant la musique !
  %\repeat volta 2 {
-  mib,2^\markup{\bold {I et III}} sol8 lab8 sib8 do8 sib4 mib (do4.) sib16 lab16
+ \set Score.repeatCommands = #'((volta "1, 3"))
+  mib,2
+  %^\markup{\bold {I et III}}
+  sol8 lab8 sib8 do8 sib4 mib (do4.) sib16 lab16
 sib4.( sol8 fa8mib8lab8sol8)
 fa4. fa8 sol2\fermata %^\markup{ \italic fin} 
 \bar "||"
 % \alternative{
-R1*4
-%1
+ \cadenzaOn mib8 %^\markup{\bold {II}}
+ sol8[( lab8 sib8])] sib4( do8[ sib8 lab8] sib4 mib8[ do8 sib8-! lab8 sib8 do8] sib4)
+%2
+ \bar "'"
+%3
+ sib8[( sol8 fa8-! mib8 lab8 sol8)] fa8-! fa8 mib4%1
+% \bar ":|."
 \break
-sol8^\markup{\bold {IV et VI}} sol8[( fa8 mib8-! re8] mib4 mib8[ sol8 lab8] sib4 do8[ sib8 lab8] sib4)
+  \set Score.repeatCommands = #'((volta "4, 6"))
+sol8%^\markup{\bold {IV et VI}} 
+sol8[( fa8 mib8-! re8] mib4 mib8[ sol8 lab8] sib4 do8[ sib8 lab8] sib4)
 %2
  \bar "'"
 %3
@@ -43,7 +53,11 @@ sol8^\markup{\bold {IV et VI}} sol8[( fa8 mib8-! re8] mib4 mib8[ sol8 lab8] sib4
  s2 s8 \bar "||"
 %Christe
 \break 
-\cadenzaOff sol4^\markup{\bold {V}} sol4. (fa8 mib re) mib4 sib'4. (do8 sib lab sol4. fa8 mib4 lab8 sol) fa4. sol16 lab sol2\fermata  \bar "||"
+\cadenzaOff 
+  \set Score.repeatCommands = #'((volta "5"))
+sol4%^\markup{\bold {V}} 
+sol4. (fa8 mib re) mib4 sib'4. (do8 sib lab sol4. fa8 mib4 lab8 sol) fa4. sol16 lab sol2\fermata  \bar "||"
+\set Score.repeatCommands = #'((volta #f))
 %Kyrie
 mib'4 re mib (sib do sib8  lab sib4 sol) do4.  (re8 mib mib, lab sol) fa4. fa8 sol2\fermata\bar "||"
 R1*4
@@ -56,6 +70,8 @@ verseMezzoSopranoVoice = \lyricmode {
   % Ajouter ici des paroles.
   Ky - _  -- _ -- ri -- e  e -- _ _ _  le -- i -- son
   %1
+  Ky -- ri -- e
+_e -- lé -- i -- son.
 Chri -- ste
 %2
 %3
@@ -73,8 +89,12 @@ tenorVoice = \relative do' {
   % En avant la musique !
   mib4(re8 do8) sib4. sib8 sol4sib do8 mib (mib4) (mib4.)  
   sib8 do4. (mib8) mib4 (re8) do8  sib2\fermata
-R1*4
-R1*4
+ \cadenzaOn mib,8 %^\markup{\bold {II}}
+ sol8[( lab8 sib8])] sib4( do8[ sib8 lab8] sib4 mib8[ do8 sib8-! lab8 sib8 do8] sib4)
+%2
+ \bar "'"
+%3
+ sib8[( sol8 fa8-! mib8 lab8 sol8)] fa8-! fa8 mib4R1*4
 %Christe
 sib4 do2. (do8 sib16 lab sib8 do re2) mib8 (re do re mib sib do4) do8 mib re re mib2\fermata
 %Kyrie
@@ -93,6 +113,8 @@ r4 r4 mib4 re mib2 fa4 (mib8 re do4 fa sib, do) do( re8) do sib2\fermata
 verseTenorVoice = \lyricmode {
   % Ajouter ici des paroles.
    Ky -- _ ri -- e  e -- _ _ _ _  le -- i -- son
+   Ky -- ri -- e
+_e -- lé -- i -- son.
   Chri -- ste e -- le -- _ _ i -- son.
   Ky -- ri -- e e -- le -- i -- son.
   Ký -- ri -- e
@@ -110,12 +132,15 @@ bassVoice = \relative do {
 
 %gregorien
 %1
-\break
- \cadenzaOn mib8^\markup{\bold {II}} sol8[( lab8 sib8])] sib4( do8[ sib8 lab8] sib4 mib8[ do8 sib8-! lab8 sib8 do8] sib4)
+\break 
+  \set Score.repeatCommands = #'((volta "2"))
+ \cadenzaOn mib8 %^\markup{\bold {II}}
+ sol8[( lab8 sib8])] sib4( do8[ sib8 lab8] sib4 mib8[ do8 sib8-! lab8 sib8 do8] sib4)
 %2
  \bar "'"
 %3
- sib8[( sol8 fa8-! mib8 lab8 sol8)] fa8-! fa8 mib4 \bar "||"
+ sib8[( sol8 fa8-! mib8 lab8 sol8)] fa8-! fa8 mib4
+ %\bar "||"
 %4
  s4 s8
 %\bar ":|."

@@ -3,7 +3,7 @@
 
 \header {
   % Supprimer le pied de page par défaut
- % title = "Agnus Dei"
+  title = "Agnus Dei"
 
   % Supprimer le pied de page par défaut tagline = ##f
 }
@@ -50,12 +50,12 @@ verseOneMezzoSopranoVoice = \lyricmode {
   \set stanza = "1."
   % Ajouter ici des paroles.
   A -- gnus De -- i, qui tol -- lis pec -- ca -- ta mun -- _ di, Mi -- se -- re -- re no -- bis.
-  "2. A" -- gnus
+ \markup{ \bold {2.}A} -- gnus
 
-De -- i,
+De --" i, *"
 
 
-&zwj;*__qui
+__qui
 
 tol -- lis
 

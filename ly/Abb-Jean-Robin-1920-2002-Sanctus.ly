@@ -3,7 +3,7 @@
 
 % 
 \header {
-%  title = "Sanctus"
+ title = "Sanctus"
 
   % Supprimer le pied de page par défaut
   tagline = ##f
