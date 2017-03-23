@@ -15,13 +15,15 @@
 global = {
   \key mi \minor
   \time 4/4
+  \autoBeamOff
 }
 
 mezzoSopranoVoice = \relative do'' {
   \global
   \dynamicUp
   % En avant la musique !
-  si2 (mi4) re do (si8 la) si4 \breathe sol do do8 si la4 (si8) do re4. do8 si2 mi4. re8 do4 si la4. (si16 do) si2 \fermata 
+  \autoBeamOff
+  si2 (mi4) re do (si8 [la]) si4 \breathe sol do do8 si la4 (si8) do re4. do8 si2\breathe mi4. re8 do4 si la4. (si16 [do]) si2 \fermata 
 
  \break sol8 si8[( re8)]
 
@@ -81,20 +83,20 @@ tenorVoice = \relative do' {
   \global
   \dynamicUp
   % En avant la musique !
-  re2 (do4) si mi (re8 do) re4 \breathe si8 [la] sol4 do8 do do [si] la4 la (re) re2 do4 si4. la8 sol4 sol8 ([fad16 mi] fad4) sol2\fermata
+  re2 (do4) si mi (re8 [do]) re4 \breathe si8 [la] sol4 do8 do do [si] la4 la (re) re2\breathe do4 si4. la8 sol4 sol8 ([fad16 mi] fad4) sol2\fermata
 }
 
 verseOneTenorVoice = \lyricmode {
   \set stanza = "1."
   % Ajouter ici des paroles.
-    A -- gnus De -- i, qui _ tol -- lis pec -- ca -- _ ta mun -- di, Mi -- se -- re -- re no -- bis.
+    A -- gnus De -- i, qui tol -- lis pec -- ca -- ta mun -- di, Mi -- se -- re -- re no -- bis.
 }
 
 verseTwoTenorVoice = \lyricmode {
   \set stanza = "3."
   % Ajouter ici des paroles.
   %_ _ _ _ _ _  _ _  _ _ _ _ _ _
-   A -- gnus De -- i, qui _ tol -- lis pec -- ca -- _ ta mun -- di,
+   A -- gnus De -- i, qui tol -- lis pec -- ca -- ta mun -- di,
   do -- na no -- bis pa -- cem.
 }
 
@@ -109,7 +111,7 @@ bassVoice = \relative do {
 verseOneBassVoice = \lyricmode {
   \set stanza = "1."
   % Ajouter ici des paroles.
-      A -- gnus De -- i, qui  tol -- lis pec -- ca --  ta mun -- di, Mi -- se -- re -- re _ no -- bis.
+      A -- gnus De -- i, qui  tol -- lis pec -- ca --  ta mun -- di, Mi -- se -- re -- re no -- bis.
 }
 
 verseTwoBassVoice = \lyricmode {
@@ -117,7 +119,7 @@ verseTwoBassVoice = \lyricmode {
   % Ajouter ici des paroles.
   %  _ _ _ _ _ _  _ _  _ _ _ _ 
   A -- gnus De -- i, qui  tol -- lis pec -- ca --  ta mun -- di,
-  do -- na no -- bis _ pa -- cem.
+  do -- na no -- bis pa -- cem.
 }
 
 mezzoSopranoVoicePart = \new Staff \with {
