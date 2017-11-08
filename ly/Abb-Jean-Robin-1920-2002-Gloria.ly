@@ -89,7 +89,7 @@ mib4 (re8.) re16 mib4 sib do8 (sib lab) sib8 do2 re1 \fermata
  do8[( re8)] do8[( sib8])] sib4
  \bar "||"
 \cadenzaOff
-mib4 sib lab sib do4. do8 sib2 sol4 (sib) mib (re) do2 re \fermata
+mib,4 sib' lab sib do4. do8 sib2 sol4 (sib) mib (re) do2 re \fermata
 s1*3
 mib2 (sib4 do sib2)(sib8)(lab sol fa mib4 sib' do sib lab2.)(sol8 fa) sol1\fermata\bar "|."}
 
