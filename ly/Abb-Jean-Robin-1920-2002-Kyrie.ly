@@ -45,10 +45,10 @@ sol8^\markup{\bold {IV et VI}} sol8[( fa8 mib8-! re8] mib4 mib8[ sol8 lab8] sib4
 \break 
 \cadenzaOff sol4^\markup{\bold {V}} sol4. (fa8 mib re) mib4 sib'4. (do8 sib lab sol4. fa8 mib4 lab8 sol) fa4. sol16 lab sol2\fermata  \bar "||"
 %Kyrie
-mib'4 re mib (sib do sib8  lab sib4 sol) do4.  (re8 mib mib, lab sol) fa4. fa8 sol2\fermata\bar "||"
+mib'4 ^\markup{\bold {VII}} re mib (sib do sib8  lab sib4 sol) do4.  (re8 mib mib, lab sol) fa4. fa8 sol2\fermata\bar "||"
 R1*4
 \break 
-\cadenzaOff mib'4 re mib sib( do sib8lab )sib4. lab8 sol4 \breathe mib8 (fa sol lab sib4 do4. re8 mib re do sib lab4 sib8 do )sib4. lab8 sol1\fermata
+\cadenzaOff mib'4 ^\markup{\bold {IX}} re mib sib( do sib8lab )sib4. lab8 sol4 \breathe mib8 (fa sol lab sib4 do4. re8 mib re do sib lab4 sib8 do )sib4. lab8 sol1\fermata
 \bar "|."
 }
 
@@ -80,7 +80,7 @@ sib4 do2. (do8 sib16 lab sib8 do re2) mib8 (re do re mib sib do4) do8 mib re re 
 %Kyrie
 r4 r4 mib4 re mib2 fa4 (mib8 re do4 fa sib, do) do( re8) do sib2\fermata
 
- \cadenzaOn mib8-! re8 mib8[( re8 do8-! re8 mib8] sib4 mib8[ sib8] do4 sol8[ lab8] sib4)
+ \cadenzaOn mib8-! ^\markup{\bold {VIII}}re8 mib8[( re8 do8-! re8 mib8] sib4 mib8[ sib8] do4 sol8[ lab8] sib4)
  \bar "'"
 %11
  sib8[( sol8 fa8-! mib8 lab8 sol8)] fa8-! fa8 mib4
@@ -144,18 +144,21 @@ Ky -- ri -- e e -- _ le -- i -- son, _ e -- le -- i -- son
 
 mezzoSopranoVoicePart = \new Staff \with {
   instrumentName = "MS"
+  shortInstrumentName = "MS"
   midiInstrument = "choir aahs"
 } { \mezzoSopranoVoice }
 \addlyrics { \verseMezzoSopranoVoice }
 
 tenorVoicePart = \new Staff \with {
   instrumentName = "Ténor"
+   shortInstrumentName = "T."
   midiInstrument = "choir aahs"
 } { \clef "treble_8" \tenorVoice }
 \addlyrics { \verseTenorVoice }
 
 bassVoicePart = \new Staff \with {
   instrumentName = "Basse"
+   shortInstrumentName = "B."
   midiInstrument = "choir aahs"
 } { \clef bass \bassVoice }
 \addlyrics { \verseBassVoice }
@@ -168,7 +171,7 @@ bassVoicePart = \new Staff \with {
   >>
   \layout {
 		  \context {
-		  % \Staff \RemoveEmptyStaves
+		  \Staff \RemoveEmptyStaves
 		    \override VerticalAxisGroup #'remove-first = ##t
   }}
   \midi {
